@@ -13,8 +13,12 @@ if [[ ! -d "${target_dir}" ]]; then
   exit 1
 fi
 
-echo "Building static site..."
-npm run build
+if [[ "${SKIP_BUILD:-0}" == "1" ]]; then
+  echo "Skipping build (SKIP_BUILD=1). Using existing out/."
+else
+  echo "Building static site..."
+  npm run build
+fi
 
 echo "Syncing out/ to ${target_dir} ..."
 rsync -a --delete out/ "${target_dir}/"

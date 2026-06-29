@@ -35,6 +35,12 @@ Use this one-command deploy flow to avoid web root drift:
 DEPLOY_DIR=~/domains/desrix.lv/public_html SITE_URL=https://desrix.lv npm run deploy:static
 ```
 
+On hosts where `next build` is unreliable, deploy the committed `out/` only:
+
+```bash
+SKIP_BUILD=1 DEPLOY_DIR=~/domains/desrix.lv/public_html SITE_URL=https://desrix.lv npm run deploy:static
+```
+
 What it does:
 
 - Builds static output into `out/`
