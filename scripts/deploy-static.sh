@@ -21,7 +21,15 @@ else
 fi
 
 echo "Syncing out/ to ${target_dir} ..."
-rsync -a --delete out/ "${target_dir}/"
+staging_dir=$(mktemp -d)
+cleanup() {
+  rm -rf "${staging_dir}"
+}
+trap cleanup EXIT
+
+# Stage artifacts first so rsync --delete cannot mutate the source during transfer.
+rsync -a out/ "${staging_dir}/"
+rsync -a --delete "${staging_dir}/" "${target_dir}/"
 
 echo "Running post-deploy health check..."
 SITE_URL="${SITE_URL:-https://desrix.lv}" bash scripts/check-site.sh
