@@ -38,6 +38,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} bg-gray-50 font-inter tracking-tight text-gray-900 antialiased`}
       >
+        <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(80rem_40rem_at_top_right,rgba(37,99,235,0.12),transparent_60%),radial-gradient(60rem_30rem_at_bottom_left,rgba(14,165,233,0.1),transparent_60%)]" />
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
           {children}
         </div>

@@ -38,6 +38,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
             <ul className="space-y-2 text-sm">
               <li><Link className="text-gray-600 hover:text-gray-900" href="/">Home</Link></li>
               <li><Link className="text-gray-600 hover:text-gray-900" href="/services/">Services</Link></li>
+              <li><Link className="text-gray-600 hover:text-gray-900" href="/case-studies/">Case Studies</Link></li>
               <li><Link className="text-gray-600 hover:text-gray-900" href="/about/">About</Link></li>
               <li><Link className="text-gray-600 hover:text-gray-900" href="/blog/">Blog</Link></li>
               <li><Link className="text-gray-600 hover:text-gray-900" href="/contact/">Contact</Link></li>
