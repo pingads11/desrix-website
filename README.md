@@ -27,6 +27,26 @@ If you need the design files, you can download them from Figma's Community 👉 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+### Static deploy (Hostinger)
+
+Use this one-command deploy flow to avoid web root drift:
+
+```bash
+DEPLOY_DIR=~/domains/desrix.lv/public_html SITE_URL=https://desrix.lv npm run deploy:static
+```
+
+What it does:
+
+- Builds static output into `out/`
+- Syncs `out/` into the web root with `rsync --delete`
+- Verifies key pages return `200`
+
+You can also run the health check alone:
+
+```bash
+SITE_URL=https://desrix.lv npm run health:site
+```
+
 ### Getting Started
 
 First, run the development server:
