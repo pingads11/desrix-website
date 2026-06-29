@@ -61,17 +61,19 @@ export default function Footer({ border = false }: { border?: boolean }) {
             </p>
             <form
               className="space-y-2"
-              action="https://formsubmit.co/hello@desrix.eu"
+              action={siteContent.forms.endpoint}
               method="POST"
             >
               <input type="hidden" name="_subject" value="Website Newsletter Signup" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_cc" value={siteContent.contact.ccEmail} />
               <input
                 type="hidden"
                 name="_next"
-                value="https://desrix.lv/newsletter-thank-you/"
+                value={siteContent.forms.newsletterThanksUrl}
               />
+              <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
               <label htmlFor="newsletter-email" className="sr-only">
                 Work email
               </label>

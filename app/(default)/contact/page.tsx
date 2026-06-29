@@ -38,17 +38,19 @@ export default function ContactPage() {
           <p className="mt-2 text-sm text-gray-600">We usually reply within one business day.</p>
           <form
             className="mt-5 space-y-4"
-            action="https://formsubmit.co/hello@desrix.eu"
+            action={siteContent.forms.endpoint}
             method="POST"
           >
             <input type="hidden" name="_subject" value="Website Consultation Request" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_cc" value={siteContent.contact.ccEmail} />
             <input
               type="hidden"
               name="_next"
-              value="https://desrix.lv/contact/thank-you/"
+              value={siteContent.forms.contactThanksUrl}
             />
+            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
             <div>
               <label className="mb-1 block text-sm font-medium text-gray-700" htmlFor="name">Name</label>
               <input id="name" name="name" required className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none ring-blue-500 focus:ring-2" />
