@@ -7,9 +7,16 @@ if [[ -z "${DEPLOY_DIR:-}" ]]; then
 fi
 
 target_dir="${DEPLOY_DIR%/}"
+project_root=$(pwd)
 
 if [[ ! -d "${target_dir}" ]]; then
   echo "Target directory does not exist: ${target_dir}" >&2
+  exit 1
+fi
+
+if [[ "${ALLOW_SAME_DIR_DEPLOY:-0}" != "1" && "$(cd "${target_dir}" && pwd -P)" == "$(cd "${project_root}" && pwd -P)" ]]; then
+  echo "Refusing in-place deploy from project root to itself." >&2
+  echo "Run this from a separate repo path and point DEPLOY_DIR at public_html, or set ALLOW_SAME_DIR_DEPLOY=1." >&2
   exit 1
 fi
 

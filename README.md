@@ -41,6 +41,12 @@ On hosts where `next build` is unreliable, deploy the committed `out/` only:
 SKIP_BUILD=1 DEPLOY_DIR=~/domains/desrix.lv/public_html SITE_URL=https://desrix.lv npm run deploy:static
 ```
 
+Important:
+
+- Run deploy from a repo path that is separate from `public_html`.
+- The script blocks in-place deploys by default to prevent accidental web-root corruption.
+- If you intentionally need in-place mode, set `ALLOW_SAME_DIR_DEPLOY=1`.
+
 What it does:
 
 - Builds static output into `out/`
