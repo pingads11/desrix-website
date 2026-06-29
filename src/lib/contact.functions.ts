@@ -11,9 +11,9 @@ export const contactSchema = z.object({
 export type ContactInput = z.infer<typeof contactSchema>;
 
 export const submitContactForm = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => contactSchema.parse(data))
+  .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
-    // Temporary non-database mode: accept submissions without Supabase configured.
+    // Temporary no-db mode while Supabase is disabled.
     console.info("[contact] submission accepted (no-db mode)", {
       name: data.name,
       email: data.email,
