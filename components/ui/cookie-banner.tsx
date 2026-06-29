@@ -23,7 +23,7 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-4xl rounded-xl border border-gray-200 bg-white p-4 shadow-xl">
+    <div className="fixed inset-x-4 bottom-4 z-40 mx-auto max-w-4xl rounded-xl border border-gray-200 bg-white p-4 shadow-xl">
       <p className="text-sm text-gray-700">
         We use cookies to improve your experience and maintain GDPR-compliant
         analytics preferences. Read our{" "}

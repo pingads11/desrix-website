@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Canonical host: redirect www to apex domain over HTTPS.
+RewriteCond %{HTTP_HOST} ^www\.desrix\.lv$ [NC]
+RewriteRule ^ https://desrix.lv%{REQUEST_URI} [R=301,L,NE]
+
+# Force HTTPS for all remaining requests.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://desrix.lv%{REQUEST_URI} [R=301,L,NE]
+
+# Enforce HSTS after HTTPS is active.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
