@@ -4,7 +4,7 @@ export const siteContent = {
   heroSubheadline:
     "DevOps, cloud modernization, BPO operations, and automation-first delivery tailored for EU companies.",
   contact: {
-    email: "hello@desrix.eu",
+    email: "info@desrix.lv",
     ccEmail: "ops@desrix.eu",
     phone: "+371 29 693 533",
     locationLabel: "Riga, Latvia",
@@ -13,7 +13,7 @@ export const siteContent = {
       "https://maps.google.com/maps?q=Ganibu%20dambis%2024D%2C%20Riga%2C%20Latvia&t=&z=15&ie=UTF8&iwloc=&output=embed",
   },
   forms: {
-    endpoint: "https://formsubmit.co/hello@desrix.eu",
+    endpoint: "https://formsubmit.co/info@desrix.lv",
     contactThanksUrl: "https://desrix.lv/contact/thank-you/",
     newsletterThanksUrl: "https://desrix.lv/newsletter-thank-you/",
   },

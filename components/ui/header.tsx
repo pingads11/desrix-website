@@ -54,10 +54,10 @@ export default function Header() {
   return (
     <header ref={headerRef} className="fixed top-2 z-50 w-full md:top-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl border border-gray-200 bg-white/98 px-3 shadow-lg shadow-black/10 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
           <div className="flex flex-1 items-center gap-3">
             <Logo />
-            <span className="hidden text-sm font-semibold text-gray-800 sm:block">
+            <span className="hidden text-sm font-bold text-gray-900 sm:block">
               DesRIX
             </span>
           </div>
@@ -67,7 +67,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 transition hover:text-blue-600"
+                className="rounded-md px-2.5 py-1.5 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 hover:text-blue-700"
               >
                 {item.label}
               </Link>
@@ -78,7 +78,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact/"
-                className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+                className="btn-sm border border-gray-300 bg-white text-gray-900 shadow-sm hover:bg-gray-50"
               >
                 Contact Us
               </Link>
@@ -100,7 +100,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="main-mobile-nav"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 lg:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 lg:hidden"
           >
             {open ? (
               <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -116,7 +116,7 @@ export default function Header() {
 
         <div
           id="main-mobile-nav"
-          className={open ? "mt-2 rounded-2xl border border-gray-200 bg-white p-3 shadow-lg lg:hidden" : "hidden"}
+          className={open ? "mt-2 rounded-2xl border border-gray-200 bg-white/98 p-3 shadow-lg shadow-black/10 lg:hidden" : "hidden"}
         >
           <nav className="flex flex-col gap-1">
             {navLinks.map((item) => (
@@ -124,7 +124,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-blue-600"
+                className="rounded-md px-3 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 hover:text-blue-700"
               >
                 {item.label}
               </Link>
@@ -132,7 +132,7 @@ export default function Header() {
             <Link
               href="/contact/"
               onClick={() => setOpen(false)}
-              className="mt-2 btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+              className="mt-2 btn-sm border border-gray-300 bg-white text-gray-900 shadow-sm hover:bg-gray-50"
             >
               Contact Us
             </Link>

@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
 
         <article>
           <h2 className="text-xl font-semibold text-gray-900">Your Rights</h2>
-          <p className="mt-2">You can request access, correction, or deletion of personal data by contacting hello@desrix.eu.</p>
+          <p className="mt-2">You can request access, correction, or deletion of personal data by contacting info@desrix.lv.</p>
         </article>
       </div>
     </section>
