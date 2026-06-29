@@ -54,7 +54,7 @@ export default function Header() {
   return (
     <header ref={headerRef} className="fixed top-2 z-50 w-full md:top-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl border border-gray-200 bg-white/98 px-3 shadow-lg shadow-black/10 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl border border-gray-300 bg-white px-3 shadow-lg shadow-black/10">
           <div className="flex flex-1 items-center gap-3">
             <Logo />
             <span className="hidden text-sm font-bold text-gray-900 sm:block">
@@ -62,7 +62,7 @@ export default function Header() {
             </span>
           </div>
 
-          <nav className="hidden items-center gap-5 lg:flex">
+          <nav className="hidden items-center gap-5 md:flex">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
@@ -74,7 +74,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <ul className="hidden flex-1 items-center justify-end gap-3 lg:flex">
+          <ul className="hidden flex-1 items-center justify-end gap-3 xl:flex">
             <li>
               <Link
                 href="/contact/"
@@ -100,7 +100,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="main-mobile-nav"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 lg:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 md:hidden"
           >
             {open ? (
               <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -116,7 +116,7 @@ export default function Header() {
 
         <div
           id="main-mobile-nav"
-          className={open ? "mt-2 rounded-2xl border border-gray-200 bg-white/98 p-3 shadow-lg shadow-black/10 lg:hidden" : "hidden"}
+          className={open ? "mt-2 rounded-2xl border border-gray-200 bg-white/98 p-3 shadow-lg shadow-black/10 md:hidden" : "hidden"}
         >
           <nav className="flex flex-col gap-1">
             {navLinks.map((item) => (
