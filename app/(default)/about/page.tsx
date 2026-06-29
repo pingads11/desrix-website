@@ -6,17 +6,17 @@ export const metadata = {
 
 const team = [
   {
-    name: "Amina Kovacs",
+    name: "Nora Ellison",
     role: "Head of Cloud & DevOps",
     expertise: "Cloud architecture, SRE, and release engineering",
   },
   {
-    name: "Lukas Berg",
+    name: "Milo Hartwell",
     role: "Director of AI Solutions",
     expertise: "Agentic automation, AI support systems, and MLOps",
   },
   {
-    name: "Elina Markova",
+    name: "Sasha Viren",
     role: "Operations Lead",
     expertise: "BPO service design, multilingual support, and QA",
   },
