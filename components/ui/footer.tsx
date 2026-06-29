@@ -59,13 +59,26 @@ export default function Footer({ border = false }: { border?: boolean }) {
             <p className="text-sm text-gray-600">
               Receive practical cloud and AI growth insights once a month.
             </p>
-            <form className="space-y-2" action="mailto:hello@desrix.eu" method="post" encType="text/plain">
+            <form
+              className="space-y-2"
+              action="https://formsubmit.co/hello@desrix.eu"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="Website Newsletter Signup" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://desrix.lv/newsletter-thank-you/"
+              />
               <label htmlFor="newsletter-email" className="sr-only">
                 Work email
               </label>
               <input
                 id="newsletter-email"
                 type="email"
+                name="email"
                 required
                 placeholder="Work email"
                 className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 outline-none ring-blue-500 focus:ring-2"
@@ -77,6 +90,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 Subscribe
               </button>
             </form>
+            <p className="text-xs text-gray-500">
+              By subscribing, you agree to receive operational and product updates from DesRIX.
+            </p>
           </div>
         </div>
 
