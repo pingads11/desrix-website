@@ -6,6 +6,11 @@ export const metadata = {
 
 const team = [
   {
+    name: "Steve Caldwell",
+    role: "Chief Executive Officer",
+    expertise: "Business strategy, EU market growth, and enterprise partnerships",
+  },
+  {
     name: "Nora Ellison",
     role: "Head of Cloud & DevOps",
     expertise: "Cloud architecture, SRE, and release engineering",
